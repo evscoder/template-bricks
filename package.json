@@ -1,0 +1,34 @@
+{
+  "name": "template-bricks",
+  "version": "1.0.1",
+  "private": true,
+  "description": "Monorepository for template-bricks — templates and a CLI generator.",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "cd packages/create-template-bricks && node bin/cli.js",
+    "patch": "npm --prefix packages/create-template-bricks version patch",
+    "publish:cli": "npm publish ./packages/create-template-bricks --access public"
+  },
+  "keywords": [
+    "cli",
+    "starter",
+    "frontend",
+    "dev",
+    "template",
+    "gulp",
+    "webpack",
+    "pug",
+    "nunjucks",
+    "twig",
+    "mjml",
+    "typescript",
+    "scss",
+    "tailwindcss"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.12.0"
+  }
+}

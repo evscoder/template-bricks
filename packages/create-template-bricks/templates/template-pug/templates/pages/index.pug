@@ -1,0 +1,12 @@
+extends ../layouts/base
+append components
+    include ../widgets/home-hero/index
+    -
+        page = {
+            id: 'home',
+            title: 'Template Bricks',
+            attrs: {},
+            content: {}
+        }
+block content
+    +Hero

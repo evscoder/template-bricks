@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+    {% include "../shared/ui/head/index.html.twig" with {
+        data: head.default,
+        page: page
+    } %}
+    <body>
+        %symbols%
+        <div class="page-wrapper">
+            {% block header %}{% endblock %}
+
+            <main class="page-content">
+                {% block content %}{% endblock %}
+            </main>
+
+            {% block footer %}
+                {% include "../widgets/footer/index.html.twig" %}
+            {% endblock %}
+        </div>
+        {% block scripts %}
+            <script src="{{ asset('js/vendor.js') }}{{ version }}"></script>
+            <script src="{{ asset('js/main.js') }}{{ version }}"></script>
+        {% endblock %}
+    </body>
+</html>

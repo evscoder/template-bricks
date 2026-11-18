@@ -1,0 +1,46 @@
+import gulp from 'gulp';
+import * as config from '../config.js';
+import { $ } from '../helper.js';
+import optimizeRaster from './plugins/optimize-raster.js';
+const { src, dest } = gulp;
+import userConfig from '../../user.config.js';
+const { optimizeImages, optimizePng } = userConfig;
+
+const createImageOptimize = () => {
+    return {
+        imageOptimize: done => {
+            if (optimizeImages) {
+                return src(`${config.imagesPath.src}/**/*.*`)
+                    .pipe($.newer(config.imagesPath.dist))
+                    .pipe($.debug({ title: 'images' }))
+                    .pipe(optimizeRaster({ optimizePng }))
+                    .pipe($.if(/[.]svg$/, $.svgmin(() => {
+                        return {
+                            js2svg: {
+                                pretty: true,
+                                indent: '\t'
+                            },
+                            plugins: [
+                                {
+                                    cleanupIDs: false
+                                }, {
+                                    removeViewBox: false
+                                }, {
+                                    convertPathData: false
+                                }, {
+                                    mergePaths: false
+                                }
+                            ]
+                        };
+                    })))
+                    .pipe(dest(config.imagesPath.dist));
+            }
+
+            return done();
+        }
+    };
+};
+
+const imageOptimizeModule = createImageOptimize();
+
+export default imageOptimizeModule;

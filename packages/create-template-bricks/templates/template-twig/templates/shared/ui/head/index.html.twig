@@ -1,0 +1,11 @@
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{ page.title ?? data.title }}</title>
+    <meta name="description" content="{{ data.description }}"/>
+    {% block styles %}
+        <link href="{{ asset('css/vendor.css') }}{{ version }}" rel="stylesheet">
+        <link href="{{ asset('css/styles.css') }}{{ version }}" rel="stylesheet">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/favicons/favicon.ico') }}"/>
+</head>
