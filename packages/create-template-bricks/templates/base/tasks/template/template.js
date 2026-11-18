@@ -126,7 +126,8 @@ const createTemplateTasks = () => {
                         $.if(
                             templateEngine === 'twig',
                             $.twig({
-                                base: sourceFolder
+                                base: sourceFolder,
+                                functions: [{ name: 'asset', func: tmpConfigData.asset }]
                             }).on('error', () => browser.notify('<strong>FAIL</strong> Twig')),
 
                             $.nunjucksRender({
