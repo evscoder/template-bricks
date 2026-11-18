@@ -146,7 +146,7 @@ const createWatcher = () => {
                     });
                 }
             ).on('all', (event, file) => {
-                if (path.basename(file) === 'tmplConfig.js') {
+                if (path.basename(file) === 'template-helper.js') {
                     templateConfigChanged = true;
                 } else {
                     pendingTemplateChanges.add(file);

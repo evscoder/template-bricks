@@ -29,7 +29,7 @@ const dependencies = new TemplateDependencies({
 
 const getConfig = async () => {
     const configPath = pathToFileURL(
-        path.resolve(dirname, '../..', sourceFolder, 'tmplConfig.js')
+        path.resolve(dirname, '../..', sourceFolder, 'template-helper.js')
     );
 
     configPath.searchParams.set('t', Date.now().toString());

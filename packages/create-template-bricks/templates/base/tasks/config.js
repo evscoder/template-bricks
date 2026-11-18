@@ -82,7 +82,7 @@ export const watchPath = {
         `${sourceFolder}/templates/**/*`,
         `!${sourceFolder}/templates/**/*.json`,
         `!${sourceFolder}/templates/emails/**`,
-        `${sourceFolder}/tmplConfig.js`
+        `${sourceFolder}/template-helper.js`
     ],
     data: [
         `${sourceFolder}/templates/**/*.json`
