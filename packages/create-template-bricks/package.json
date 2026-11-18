@@ -1,6 +1,6 @@
 {
   "name": "create-template-bricks",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "CLI for creating projects based on template-bricks.",
   "repository": {
     "type": "git",
